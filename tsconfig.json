@@ -1,11 +1,13 @@
 {
   "compilerOptions": {
+    "resolveJsonModule": true,
     "removeComments": false,
     "preserveConstEnums": true,
     "sourceMap": true,
     "target": "ES6",
     "module": "commonjs",
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "strictNullChecks": false
   },
   "exclude": [
     "node_modules"
