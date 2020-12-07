@@ -4,78 +4,48 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "ENVIRONMENT=prd ./node_modules/.bin/tsc && node --require dotenv/config index.js",
-    "start": "ENVIRONMENT=prd app.js"
+    "test": "yarn tsc && nyc ./node_modules/.bin/mocha --opts mocha.opts \"*Spec.ts\" --require ts-node/register"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@newrelic/native-metrics": "^4.1.0",
-    "@rps/axios-crs-client": "^0.0.5",
-    "@rps/common": "^5.1.5",
-    "@rps/message-bus": "^17.1.1",
-    "@rps/message-bus-3.1.0": "npm:@rps/message-bus@3.1.0",
-    "@rps/mysql": "5.4.0",
-    "@rps/queue-handler": "^10.1.0",
-    "@rps/queue-handler-6.0.3": "npm:@rps/queue-handler@6.0.3",
-    "@rps/winston-newrelic": "^2.0.0",
     "@testdeck/mocha": "^0.0.6",
     "app-root-path": "1.0.*",
-    "aws-sdk": "^2.7.9",
-    "axios": "^0.18.0",
-    "bcryptjs": "^2.4.3",
-    "bluebird": "^3.5.2",
-    "body-parser": "1.14.*",
-    "commander": "2.9.*",
-    "crypto-js": "^3.1.9-1",
-    "express": "4.x",
-    "ip": "^1.1.5",
-    "jsonwebtoken": "^8.3.0",
-    "manage-database": "^0.2.1",
-    "moment": "^2.24.0",
-    "mysql": "2.13.0",
-    "newrelic": "^5.10.0",
     "node.extend": "1.1.*",
-    "q": "^1.4.1",
-    "query-string": "3.0.*",
-    "redis": "^2.7.1",
-    "restify": "^8.4",
-    "serializer.ts": "^0.0.12",
-    "source-map-support": "^0.4.2",
-    "sqs-consumer": "~4",
-    "utils-merge": "^1.0.0",
-    "validator.ts": "^0.2.2",
-    "winston": "2.4.2",
-    "winston-logrotate": "^1.3.0",
-    "winston-logzio": "^1.0.3",
-    "winston-splunk-transport": "^0.3.1",
-    "yaml-js": "0.1.4"
+    "source-map-support": "^0.4.2"
   },
   "devDependencies": {
-    "@types/bcryptjs": "^2.4.2",
-    "@types/bluebird": "^3.5.24",
-    "@types/cryptojs": "^3.1.29",
-    "@types/express": "^4.16.0",
     "@types/extend": "^2.0.30",
     "@types/form-data": "https://registry.npmjs.org/@types/form-data/-/form-data-0.0.33.tgz",
-    "@types/jsonwebtoken": "^7.2.0",
     "@types/mocha": "^2.2.41",
-    "@types/mysql": "2.15.6",
     "@types/node": "^9.3.0",
-    "@types/query-string": "^5.0.1",
-    "@types/redis": "^0.12.36",
-    "@types/restify": "^4.3.1",
-    "@types/sinon": "^5.0.5",
-    "axios-mock-adapter": "^1.15.0",
-    "class-transformer": "^0.2.0",
-    "class-validator": "^0.9.1",
-    "json-diff": "^0.5.4",
+    "@types/sinon": "^9.0.4",
     "mocha": "5.2.0",
-    "reflect-metadata": "^0.1.10",
-    "rewire": "^2.5",
-    "sinon": "^7.0.0",
+    "sinon": "^9.0.2",
     "ts-sinon": "^1.0.23",
+    "ts-node": "^9.0.0",
     "tslint": "^4.5.1",
+    "nyc": "^15.1.0",
+    "prettier": "^2.1.2",
+    "prettier-eslint": "^11.0.0",
+    "prettier-eslint-cli": "^5.0.0",
     "typescript": "^3.4.5"
+  },
+  "nyc": {
+    "extension": [
+      ".ts",
+      ".tsx"
+    ],
+    "include": [
+      "index.js"
+    ],
+    "exclude": [
+      "**/*.d.ts"
+    ],
+    "reporter": [
+      "lcov",
+      "html"
+    ],
+    "all": true
   }
 }
