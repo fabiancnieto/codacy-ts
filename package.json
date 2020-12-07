@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "yarn tsc && nyc ./node_modules/.bin/mocha --opts mocha.opts \"*Spec.ts\" --require ts-node/register"
+    "test": "yarn tsc && nyc ./node_modules/.bin/mocha --opts test/mocha.opts \"test/*Spec.ts\" --require ts-node/register"
   },
   "author": "",
   "license": "ISC",
@@ -37,7 +37,7 @@
       ".tsx"
     ],
     "include": [
-      "index.js"
+      "src/**"
     ],
     "exclude": [
       "**/*.d.ts"

@@ -1,7 +1,8 @@
 import {suite, test} from "@testdeck/mocha";
-import {IDependencyOne, IDependencyTwo, ICoverage, FullCoverage} from "./index";
+import {IDependencyOne, IDependencyTwo, ICoverage} from "../index";
 import {stubInterface} from "ts-sinon";
 import * as assert from "assert";
+import {FullCoverage} from "../src/FullCoverage";
 
 @suite
 class FullCoverageSpec {
