@@ -24,9 +24,4 @@ class PartialCoverageSpec {
         const result = this.partialCoverage.mainMethod();
         assert.equal(result, "Hi");
     }
-
-    @test "auxMethod, should return string if no parameter was specified"() {
-        const result = this.partialCoverage.auxMethod();
-        assert.equal(result, 10);
-    }
 }
